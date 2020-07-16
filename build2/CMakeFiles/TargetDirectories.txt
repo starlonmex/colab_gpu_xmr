@@ -1,0 +1,15 @@
+/content/xmrig/build/CMakeFiles/rebuild_cache.dir
+/content/xmrig/build/CMakeFiles/xmrig.dir
+/content/xmrig/build/CMakeFiles/edit_cache.dir
+/content/xmrig/build/CMakeFiles/xmrig-asm.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/edit_cache.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/argon2.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/argon2-avx512f.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/argon2-avx2.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/rebuild_cache.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/argon2-xop.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/argon2-ssse3.dir
+/content/xmrig/build/src/3rdparty/argon2/CMakeFiles/argon2-sse2.dir
+/content/xmrig/build/src/3rdparty/libethash/CMakeFiles/rebuild_cache.dir
+/content/xmrig/build/src/3rdparty/libethash/CMakeFiles/edit_cache.dir
+/content/xmrig/build/src/3rdparty/libethash/CMakeFiles/ethash.dir

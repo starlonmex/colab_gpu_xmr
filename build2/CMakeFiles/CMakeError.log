@@ -1,0 +1,134 @@
+Performing C SOURCE FILE Test FEATURE_ssse3_NOFLAG failed with the following output:
+Change Dir: /content/xmrig/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_77d03/fast"
+/usr/bin/make -f CMakeFiles/cmTC_77d03.dir/build.make CMakeFiles/cmTC_77d03.dir/build
+make[1]: Entering directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77d03.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_ssse3_NOFLAG   -o CMakeFiles/cmTC_77d03.dir/src.c.o   -c /content/xmrig/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/x86intrin.h:39:0,
+                 from /content/xmrig/build/CMakeFiles/CMakeTmp/src.c:1:
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c: In function ‘function_ssse3’:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/tmmintrin.h:136:1: error: inlining failed in call to always_inline ‘_mm_shuffle_epi8’: target specific option mismatch
+ _mm_shuffle_epi8 (__m128i __X, __m128i __Y)
+ ^~~~~~~~~~~~~~~~
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c:5:12: note: called from here
+     *dst = _mm_shuffle_epi8(*a, *b);
+            ^~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_77d03.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_77d03.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_77d03.dir/src.c.o] Error 1
+make[1]: Leaving directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_77d03/fast' failed
+make: *** [cmTC_77d03/fast] Error 2
+
+Source file was:
+#include <x86intrin.h>
+
+void function_ssse3(__m128i *dst, const __m128i *a, const __m128i *b)
+{
+    *dst = _mm_shuffle_epi8(*a, *b);
+}
+
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FEATURE_xop_NOFLAG failed with the following output:
+Change Dir: /content/xmrig/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d8a0b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d8a0b.dir/build.make CMakeFiles/cmTC_d8a0b.dir/build
+make[1]: Entering directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d8a0b.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_xop_NOFLAG   -o CMakeFiles/cmTC_d8a0b.dir/src.c.o   -c /content/xmrig/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/x86intrin.h:54:0,
+                 from /content/xmrig/build/CMakeFiles/CMakeTmp/src.c:1:
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c: In function ‘function_xop’:
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c:5:12: error: ‘__builtin_ia32_vprotqi’ needs isa option -m32 -mxop
+     *dst = _mm_roti_epi64(*a, b);
+            ^
+CMakeFiles/cmTC_d8a0b.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d8a0b.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d8a0b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_d8a0b/fast' failed
+make: *** [cmTC_d8a0b/fast] Error 2
+
+Source file was:
+#include <x86intrin.h>
+
+void function_xop(__m128i *dst, const __m128i *a, int b)
+{
+    *dst = _mm_roti_epi64(*a, b);
+}
+
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FEATURE_avx2_NOFLAG failed with the following output:
+Change Dir: /content/xmrig/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_62e87/fast"
+/usr/bin/make -f CMakeFiles/cmTC_62e87.dir/build.make CMakeFiles/cmTC_62e87.dir/build
+make[1]: Entering directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_62e87.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_avx2_NOFLAG   -o CMakeFiles/cmTC_62e87.dir/src.c.o   -c /content/xmrig/build/CMakeFiles/CMakeTmp/src.c
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c: In function ‘function_avx2’:
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c:5:10: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+     *dst = _mm256_xor_si256(*a, *b);
+     ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:43:0,
+                 from /usr/lib/gcc/x86_64-linux-gnu/7/include/x86intrin.h:48,
+                 from /content/xmrig/build/CMakeFiles/CMakeTmp/src.c:1:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avx2intrin.h:913:1: error: inlining failed in call to always_inline ‘_mm256_xor_si256’: target specific option mismatch
+ _mm256_xor_si256 (__m256i __A, __m256i __B)
+ ^~~~~~~~~~~~~~~~
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c:5:12: note: called from here
+     *dst = _mm256_xor_si256(*a, *b);
+            ^~~~~~~~~~~~~~~~~~~~~~~~
+CMakeFiles/cmTC_62e87.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_62e87.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_62e87.dir/src.c.o] Error 1
+make[1]: Leaving directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_62e87/fast' failed
+make: *** [cmTC_62e87/fast] Error 2
+
+Source file was:
+#include <x86intrin.h>
+
+void function_avx2(__m256i *dst, const __m256i *a, const __m256i *b)
+{
+    *dst = _mm256_xor_si256(*a, *b);
+}
+
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FEATURE_avx512f_NOFLAG failed with the following output:
+Change Dir: /content/xmrig/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_46d88/fast"
+/usr/bin/make -f CMakeFiles/cmTC_46d88.dir/build.make CMakeFiles/cmTC_46d88.dir/build
+make[1]: Entering directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_46d88.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_avx512f_NOFLAG   -o CMakeFiles/cmTC_46d88.dir/src.c.o   -c /content/xmrig/build/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/7/include/immintrin.h:45:0,
+                 from /usr/lib/gcc/x86_64-linux-gnu/7/include/x86intrin.h:48,
+                 from /content/xmrig/build/CMakeFiles/CMakeTmp/src.c:1:
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c: In function ‘function_avx512f’:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/avx512fintrin.h:154:1: error: inlining failed in call to always_inline ‘_mm512_undefined_epi32’: target specific option mismatch
+ _mm512_undefined_epi32 (void)
+ ^~~~~~~~~~~~~~~~~~~~~~
+/content/xmrig/build/CMakeFiles/CMakeTmp/src.c:5:12: note: called from here
+     *dst = _mm512_ror_epi64(*a, 57);
+            ^
+CMakeFiles/cmTC_46d88.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_46d88.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_46d88.dir/src.c.o] Error 1
+make[1]: Leaving directory '/content/xmrig/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_46d88/fast' failed
+make: *** [cmTC_46d88/fast] Error 2
+
+Source file was:
+#include <x86intrin.h>
+
+void function_avx512f(__m512i *dst, const __m512i *a)
+{
+    *dst = _mm512_ror_epi64(*a, 57);
+}
+
+int main(void) { return 0; }
+
